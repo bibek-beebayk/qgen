@@ -18,7 +18,7 @@ class Generator():
     '''
 
     def __init__(self, par: str = None, url: str = None, topic: str = None, type='word'):
-        self.par = par
+        self.par = par.lower()
         self.url = url
         self.topic = topic
         self.type = type
