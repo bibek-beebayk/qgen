@@ -1,3 +1,5 @@
+import re
+
 
 class Generator():
     ''' Generates a series of questions from the given paragraph or url or topic.
@@ -34,9 +36,9 @@ class Generator():
         return tokens 
     
     def word_tokenize(self, text):
-        tokens = text.strip().split(' ')
-        return tokens
+        words = text.strip().split(' ')
+        return words
     
     def sentence_tokenize(self, text):
-        tokens = text.strip().split('.')
-        return tokens
+        sentences = re.compile('[.?!] ').split(text)
+        return sentences
